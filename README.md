@@ -57,7 +57,7 @@ The simulation wiring underwent several iterations to ensure electrical accuracy
 2. **Level Shifting Integration:** A custom level-shifter breakout was introduced to bridge the 3.3V Pico logic with the 5V MCP logic. 
 3. **Final Circuit Diagram:** The hardware address pins (A0, A1, A2) on the MCP23017 chips were strictly routed to GND and VBUS. This ensures the Pico can distinctly recognize them at I2C addresses `0x20`, `0x21`, and `0x22`.
 
-![Final Wokwi Circuit Diagram](./Simulation/Screenshots/Circuit_Diagram.png")
+![Final Wokwi Circuit Diagram](./Simulation/Screenshots/Circuit_Diagram.png)
 
 ### Testing & Validation Outputs
 The MicroPython serial monitor successfully validates the core capabilities of the IC Tester:

@@ -57,7 +57,7 @@ The simulation wiring underwent several iterations to ensure electrical accuracy
 2. **Level Shifting Integration:** A custom level-shifter breakout was introduced to bridge the 3.3V Pico logic with the 5V MCP logic. 
 3. **Final Circuit Diagram:** The hardware address pins (A0, A1, A2) on the MCP23017 chips were strictly routed to GND and VBUS. This ensures the Pico can distinctly recognize them at I2C addresses `0x20`, `0x21`, and `0x22`.
 
-![Final Wokwi Circuit Diagram](simulations/screenshots/Circuit_Diagram.png)
+![Final Wokwi Circuit Diagram](Simulations/Screenshots/Circuit_Diagram.png)
 
 ### Testing & Validation Outputs
 The MicroPython serial monitor successfully validates the core capabilities of the IC Tester:
@@ -65,14 +65,14 @@ The MicroPython serial monitor successfully validates the core capabilities of t
 **1. I2C Scanning & Auto-Identification:**
 Upon boot, the system successfully scans the bus and detects the three expanders. When set to Auto-Identify Mode, the script rapidly pulses test vectors against an unknown inserted chip, successfully matching the physical responses to the `74LS08` database signature.
 
-![Auto-Identify Success](simulations/screenshots/Select_1.png)
+![Auto-Identify Success](Simulations/Screenshots/Select_1.png)
 
 **2. Manual IC Testing (Pass Condition):**
 When manually commanding the tester to check a 74LS08 AND Gate, the system steps through all 4 gates. The console prints the expected (`Exp`) vs. actual (`Got`) states for every truth-table row, resulting in a perfect `PASS`.
 
-![Manual Test Pass](simulations/screenshots/Select_2_Crt.png)
+![Manual Test Pass](Simulations/Screenshots/Select_2_Crt.png)
 
 **3. Fault Detection (Fail Condition):**
 To prove the system catches bad logic, a 74LS08 chip was left in the socket, but the system was told to test it as a 74LS00 NAND Gate. The system correctly identifies the logic mismatch on every gate, throwing red `X` marks and halting with a final `FAILED` status.
 
-![Manual Test Fail](simulations/screenshots/Select_2_Wrg.png)
+![Manual Test Fail](Simulations/Screenshots/Select_2_Wrg.png)

@@ -2,12 +2,12 @@
 
 A full-stack, Web-Based Universal IC Tester built with a Raspberry Pi Pico and MCP23017 I/O expanders. It reimagines the classic, expensive digital IC tester as a modern, scalable hardware and software system featuring dynamic pin routing, truth-table verification, and a Web Serial API frontend.
 
-## 🧠 The Architecture: Brain vs. Muscle
+## The Architecture: Brain vs. Muscle
 This project splits the workload between a web browser and a microcontroller to overcome the storage and UI limitations of traditional embedded systems:
 * **The Brain (Web Frontend):** A browser-based interface built with HTML/JS. It holds the infinitely expandable IC JSON database (truth tables, power pinouts) and handles the user interface.
 * **The Muscle (Raspberry Pi Pico):** A "dumb" executor running MicroPython. It listens for JSON commands via USB serial, executes the raw I2C byte operations to the MCP23017 chips, and returns the physical logic results.
 
-## ✨ Key Features
+## Key Features
 * **Universal Programmable Switching Matrix:** There is no fixed wiring for VCC or GND. The firmware dynamically configures any of the 40 ZIF socket pins as a Logic High, Logic Low, High-Z Input, or Power Supply based on the selected chip's footprint.
 * **Web Serial API Integration:** Communicates directly with the Pico via USB serial directly from Google Chrome or Microsoft Edge. No standalone desktop apps or drivers required.
 * **Truth Table Verification:** Injects test vectors (stimulus) into the IC and compares the physical logic responses against expected states.

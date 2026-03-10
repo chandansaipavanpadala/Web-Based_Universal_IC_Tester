@@ -1,5 +1,5 @@
 /**
- * NEO-TERRA IC CHECKER
+ * WEB-BASED DIGITAL IC TESTER
  * Core Logic Script
  */
 
